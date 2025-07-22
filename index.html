@@ -1,0 +1,1576 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta name="description" content="Portfolio de Bochra Tayaichi - Développeuse Web et Spécialiste BI">
+<meta name="keywords" content="portfolio, développement web, business intelligence">
+<meta name="author" content="Bochra Tayaichi">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bochra Tayaichi | Portfolio</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary: #4361ee;
+            --secondary: #f72585;
+            --accent: #4cc9f0;
+            --light: #f8f9fa;
+            --dark: #212529;
+            --success: #7209b7;
+            --text: #333;
+            --gray: #6c757d;
+            --light-gray: #e9ecef;
+            --transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            --shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
+            --border-radius: 12px;
+            --gradient: linear-gradient(135deg, var(--primary) 0%, var(--success) 100%);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Montserrat', sans-serif;
+            line-height: 1.7;
+            color: var(--text);
+            background: #f0f4f8;
+            overflow-x: hidden;
+            scroll-behavior: smooth;
+        }
+
+        h1, h2, h3, h4, h5 {
+            font-family: 'Poppins', sans-serif;
+            font-weight: 700;
+            margin-bottom: 1.5rem;
+            color: var(--dark);
+        }
+
+        h1 {
+            font-size: 3.5rem;
+            line-height: 1.2;
+        }
+
+        h2 {
+            font-size: 2.5rem;
+            position: relative;
+            display: inline-block;
+        }
+
+        h2:after {
+            content: '';
+            position: absolute;
+            bottom: -15px;
+            left: 0;
+            width: 70px;
+            height: 5px;
+            background: var(--gradient);
+            border-radius: 10px;
+        }
+
+        section {
+            padding: 6rem 1.5rem;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 1.5rem;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 1rem 2.2rem;
+            background: var(--gradient);
+            color: white;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: var(--transition);
+            border: none;
+            cursor: pointer;
+            box-shadow: var(--shadow);
+            font-size: 1.1rem;
+            position: relative;
+            overflow: hidden;
+            z-index: 1;
+        }
+
+        .btn:before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 0%;
+            height: 100%;
+            background: linear-gradient(135deg, var(--secondary) 0%, var(--accent) 100%);
+            transition: var(--transition);
+            z-index: -1;
+        }
+
+        .btn:hover:before {
+            width: 100%;
+        }
+
+        .btn:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 12px 25px rgba(0, 0, 0, 0.2);
+        }
+
+        .btn-outline {
+            background: transparent;
+            border: 3px solid var(--primary);
+            color: var(--primary);
+        }
+
+        .btn-outline:hover {
+            color: white;
+        }
+
+        /* Header */
+        header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            z-index: 1000;
+            background: rgba(255, 255, 255, 0.95);
+            box-shadow: var(--shadow);
+            transition: var(--transition);
+            backdrop-filter: blur(10px);
+        }
+
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1.2rem 1.5rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .logo {
+            font-size: 1.8rem;
+            font-weight: 700;
+            background: var(--gradient);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            text-decoration: none;
+        }
+
+        .nav-links {
+            display: flex;
+            list-style: none;
+        }
+
+        .nav-links li {
+            margin-left: 2.5rem;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: var(--dark);
+            font-weight: 600;
+            transition: var(--transition);
+            position: relative;
+            font-size: 1.1rem;
+        }
+
+        .nav-links a:after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 0;
+            height: 3px;
+            background: var(--gradient);
+            transition: var(--transition);
+            border-radius: 3px;
+        }
+
+        .nav-links a:hover {
+            color: var(--primary);
+        }
+
+        .nav-links a:hover:after {
+            width: 100%;
+        }
+
+        .hamburger {
+            display: none;
+            cursor: pointer;
+            font-size: 1.8rem;
+            color: var(--primary);
+        }
+
+        /* Hero Section */
+        #home {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            padding-top: 80px;
+            background: linear-gradient(rgba(67, 97, 238, 0.85), rgba(67, 97, 238, 0.95)), 
+                        url('https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?q=80&w=2070') center/cover no-repeat;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 3rem;
+            align-items: center;
+            position: relative;
+            z-index: 1;
+            color: white;
+        }
+
+        .hero-content h1 {
+            color: white;
+            margin-bottom: 1.5rem;
+            animation: fadeInUp 1s ease;
+        }
+
+        .hero-content p {
+            font-size: 1.3rem;
+            margin-bottom: 2.5rem;
+            opacity: 0.9;
+            animation: fadeInUp 1.2s ease;
+        }
+
+        .hero-buttons {
+            display: flex;
+            gap: 1.5rem;
+            animation: fadeInUp 1.4s ease;
+        }
+
+        .hero-image {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            animation: float 6s ease-in-out infinite;
+        }
+
+        .profile {
+            width: 380px;
+            height: 380px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 8px solid rgba(255, 255, 255, 0.2);
+            box-shadow: 0 25px 50px rgba(0, 0, 0, 0.3);
+        }
+
+        /* Projects Section */
+        #projects {
+            background-color: white;
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 4rem;
+        }
+
+        .section-title h2 {
+            font-size: 2.8rem;
+        }
+
+        .section-title h2:after {
+            left: 50%;
+            transform: translateX(-50%);
+        }
+
+        .projects-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 2.5rem;
+        }
+
+        .project-card {
+            background: white;
+            border-radius: var(--border-radius);
+            overflow: hidden;
+            box-shadow: var(--shadow);
+            transition: var(--transition);
+            position: relative;
+            transform: translateY(30px);
+            opacity: 0;
+            animation: fadeInUp 0.8s forwards;
+            cursor: pointer;
+        }
+
+        .project-card:nth-child(1) { animation-delay: 0.2s; }
+        .project-card:nth-child(2) { animation-delay: 0.4s; }
+        .project-card:nth-child(3) { animation-delay: 0.6s; }
+        .project-card:nth-child(4) { animation-delay: 0.8s; }
+
+        .project-card:hover {
+            transform: translateY(-15px);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+        }
+
+        .project-image {
+            height: 250px;
+            width: 100%;
+            overflow: hidden;
+            position: relative;
+        }
+
+        .project-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+
+        .project-card:hover .project-image img {
+            transform: scale(1.05);
+        }
+
+        .project-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.4);
+            opacity: 0;
+            transition: opacity 0.3s ease;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .project-card:hover .project-overlay {
+            opacity: 1;
+        }
+
+        .project-overlay i {
+            color: white;
+            font-size: 2.5rem;
+            background: rgba(255, 255, 255, 0.2);
+            width: 70px;
+            height: 70px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: transform 0.3s ease;
+        }
+
+        .project-card:hover .project-overlay i {
+            transform: scale(1.2);
+        }
+
+        .project-content {
+            padding: 2rem;
+        }
+
+        .project-content h3 {
+            margin-bottom: 1rem;
+            font-size: 1.8rem;
+            color: var(--primary);
+        }
+
+        .project-category {
+            display: inline-block;
+            padding: 0.4rem 1rem;
+            background: var(--light-gray);
+            border-radius: 50px;
+            font-size: 0.9rem;
+            margin-bottom: 1.2rem;
+            font-weight: 600;
+            color: var(--gray);
+        }
+
+        .project-category.web {
+            background: rgba(67, 97, 238, 0.1);
+            color: var(--primary);
+        }
+
+        .project-category.bi {
+            background: rgba(114, 9, 183, 0.1);
+            color: var(--success);
+        }
+
+        .project-category.design {
+            background: rgba(247, 37, 133, 0.1);
+            color: var(--secondary);
+        }
+
+        /* Skills Section */
+        #skills {
+            background: linear-gradient(to bottom, #f0f4f8, #e2e8f0);
+        }
+
+        .skills-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2.5rem;
+        }
+
+        .skill-category {
+            background: white;
+            padding: 2rem;
+            border-radius: var(--border-radius);
+            box-shadow: var(--shadow);
+            transition: var(--transition);
+            transform: translateY(30px);
+            opacity: 0;
+            animation: fadeInUp 0.8s forwards;
+        }
+
+        .skill-category:nth-child(1) { animation-delay: 0.2s; }
+        .skill-category:nth-child(2) { animation-delay: 0.4s; }
+        .skill-category:nth-child(3) { animation-delay: 0.6s; }
+
+        .skill-category:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+        }
+
+        .skill-category h3 {
+            margin-bottom: 1.5rem;
+            color: var(--primary);
+            font-size: 1.8rem;
+            text-align: center;
+        }
+
+        .skill-list {
+            list-style: none;
+            text-align: center;
+        }
+
+        .skill-list li {
+            padding: 1rem 0;
+            font-size: 1.1rem;
+            font-weight: 500;
+            position: relative;
+        }
+
+        .skill-list li:after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80px;
+            height: 2px;
+            background: var(--light-gray);
+        }
+
+        .skill-list li:last-child:after {
+            display: none;
+        }
+
+        /* About Section */
+        #about {
+            background: white;
+            position: relative;
+            overflow: hidden;
+        }
+
+        #about:before {
+            content: '';
+            position: absolute;
+            top: -200px;
+            right: -200px;
+            width: 600px;
+            height: 600px;
+            border-radius: 50%;
+            background: var(--gradient);
+            opacity: 0.05;
+            z-index: 0;
+        }
+
+        .about-content {
+            max-width: 800px;
+            margin: 0 auto;
+            text-align: center;
+            font-size: 1.2rem;
+            position: relative;
+            z-index: 1;
+        }
+
+        .about-content p {
+            margin-bottom: 1.8rem;
+            line-height: 1.8;
+        }
+
+        .highlight {
+            font-weight: 600;
+            color: var(--primary);
+            position: relative;
+        }
+
+        .highlight:after {
+            content: '';
+            position: absolute;
+            bottom: -2px;
+            left: 0;
+            width: 100%;
+            height: 6px;
+            background: rgba(67, 97, 238, 0.2);
+            z-index: -1;
+        }
+
+        /* Contact Section */
+        #contact {
+            background: var(--gradient);
+            color: white;
+            position: relative;
+            overflow: hidden;
+        }
+
+        #contact:before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: url('https://images.unsplash.com/photo-1555066931-4365d14bab8c?q=80&w=2070') center/cover no-repeat;
+            opacity: 0.1;
+            z-index: 0;
+        }
+
+        .contact-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 3rem;
+            position: relative;
+            z-index: 1;
+        }
+
+        .contact-info {
+            text-align: center;
+        }
+
+        .contact-info h3 {
+            color: white;
+            margin-bottom: 2rem;
+            font-size: 2rem;
+        }
+
+        .contact-methods {
+            display: flex;
+            flex-direction: column;
+            gap: 2rem;
+        }
+
+        .contact-item {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .contact-icon {
+            width: 80px;
+            height: 80px;
+            background: rgba(255, 255, 255, 0.15);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 1.5rem;
+            color: white;
+            font-size: 2rem;
+            transition: var(--transition);
+            backdrop-filter: blur(5px);
+        }
+
+        .contact-icon:hover {
+            transform: scale(1.1) rotate(10deg);
+            background: rgba(255, 255, 255, 0.25);
+        }
+
+        .contact-item h4 {
+            margin-bottom: 0.5rem;
+            font-size: 1.3rem;
+        }
+
+        .contact-item a, .contact-item p {
+            color: rgba(255, 255, 255, 0.9);
+            text-decoration: none;
+            transition: var(--transition);
+            font-size: 1.1rem;
+        }
+
+        .contact-item a:hover {
+            color: white;
+            text-decoration: underline;
+        }
+
+        .contact-form {
+            background: rgba(255, 255, 255, 0.1);
+            padding: 2.5rem;
+            border-radius: var(--border-radius);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+            backdrop-filter: blur(10px);
+        }
+
+        .form-group {
+            margin-bottom: 1.8rem;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 0.8rem;
+            font-weight: 500;
+            color: white;
+        }
+
+        .form-control {
+            width: 100%;
+            padding: 1rem 1.2rem;
+            background: rgba(255, 255, 255, 0.15);
+            border: 2px solid rgba(255, 255, 255, 0.2);
+            border-radius: var(--border-radius);
+            font-family: 'Montserrat', sans-serif;
+            font-size: 1rem;
+            transition: var(--transition);
+            color: white;
+        }
+
+        .form-control::placeholder {
+            color: rgba(255, 255, 255, 0.7);
+        }
+
+        .form-control:focus {
+            border-color: white;
+            outline: none;
+            background: rgba(255, 255, 255, 0.25);
+            box-shadow: 0 0 0 3px rgba(255, 255, 255, 0.2);
+        }
+
+        textarea.form-control {
+            min-height: 180px;
+            resize: vertical;
+        }
+
+        /* Footer */
+        footer {
+            background: var(--dark);
+            color: white;
+            padding: 3rem 0;
+            text-align: center;
+        }
+
+        .social-links {
+            display: flex;
+            justify-content: center;
+            gap: 1.8rem;
+            margin-bottom: 2rem;
+        }
+
+        .social-links a {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 50px;
+            height: 50px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 50%;
+            color: white;
+            font-size: 1.5rem;
+            transition: var(--transition);
+        }
+
+        .social-links a:hover {
+            background: var(--primary);
+            transform: translateY(-8px);
+        }
+
+        /* Animations */
+        @keyframes fadeInUp {
+            from {
+                transform: translateY(30px);
+                opacity: 0;
+            }
+            to {
+                transform: translateY(0);
+                opacity: 1;
+            }
+        }
+
+        @keyframes float {
+            0% { transform: translateY(0px); }
+            50% { transform: translateY(-20px); }
+            100% { transform: translateY(0px); }
+        }
+
+        /* Back to top button */
+        .back-to-top {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            width: 50px;
+            height: 50px;
+            background: var(--gradient);
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.3rem;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+            cursor: pointer;
+            opacity: 0;
+            transition: all 0.4s ease;
+            z-index: 100;
+        }
+
+        .back-to-top.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .back-to-top:hover {
+            transform: translateY(-5px);
+        }
+
+        /* Project Gallery Modal */
+        .gallery-modal {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.9);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            z-index: 2000;
+            opacity: 0;
+            visibility: hidden;
+            transition: all 0.5s ease;
+        }
+
+        .gallery-modal.active {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        .gallery-container {
+            width: 90%;
+            max-width: 1200px;
+            max-height: 90vh;
+            position: relative;
+            background: white;
+            border-radius: var(--border-radius);
+            overflow: hidden;
+        }
+
+        .gallery-header {
+            padding: 1.5rem;
+            background: var(--primary);
+            color: white;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .gallery-title {
+            font-size: 1.8rem;
+            font-weight: 600;
+        }
+
+        .close-gallery {
+            background: none;
+            border: none;
+            color: white;
+            font-size: 2rem;
+            cursor: pointer;
+            transition: transform 0.3s ease;
+        }
+
+        .close-gallery:hover {
+            transform: rotate(90deg);
+        }
+
+        .gallery-content {
+            padding: 2rem;
+            max-height: calc(90vh - 100px);
+            overflow-y: auto;
+        }
+
+        .gallery-images {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 1.5rem;
+            margin-bottom: 2rem;
+        }
+
+        .gallery-image {
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: var(--shadow);
+            height: 250px;
+        }
+
+        .gallery-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+
+        .gallery-image:hover img {
+            transform: scale(1.05);
+        }
+
+        .gallery-description {
+            background: var(--light-gray);
+            padding: 1.5rem;
+            border-radius: var(--border-radius);
+            margin-top: 2rem;
+        }
+
+        .gallery-description h4 {
+            color: var(--primary);
+            margin-bottom: 1rem;
+            font-size: 1.5rem;
+        }
+
+        /* Message de succès */
+        .success-message {
+            display: none;
+            background: rgba(255, 255, 255, 0.9);
+            padding: 2rem;
+            border-radius: var(--border-radius);
+            text-align: center;
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            z-index: 3000;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+            max-width: 500px;
+            width: 90%;
+        }
+
+        .success-message i {
+            font-size: 4rem;
+            color: var(--success);
+            margin-bottom: 1.5rem;
+        }
+
+        .success-message h3 {
+            color: var(--success);
+            font-size: 2rem;
+            margin-bottom: 1rem;
+        }
+
+        .success-message p {
+            font-size: 1.2rem;
+            margin-bottom: 2rem;
+            color: var(--dark);
+        }
+
+        .success-message .btn {
+            background: var(--success);
+        }
+
+        /* Responsive Design */
+        @media (max-width: 992px) {
+            .hero {
+                grid-template-columns: 1fr;
+                text-align: center;
+            }
+            
+            .hero-image {
+                order: -1;
+                margin-bottom: 3rem;
+            }
+            
+            .hero-buttons {
+                justify-content: center;
+            }
+            
+            .profile {
+                width: 320px;
+                height: 320px;
+            }
+            
+            .gallery-images {
+                grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            }
+        }
+
+        @media (max-width: 768px) {
+            .hamburger {
+                display: block;
+            }
+            
+            .nav-links {
+                position: fixed;
+                top: 80px;
+                left: -100%;
+                width: 100%;
+                height: calc(100vh - 80px);
+                background: white;
+                flex-direction: column;
+                align-items: center;
+                padding-top: 3rem;
+                transition: var(--transition);
+                box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+            }
+            
+            .nav-links.active {
+                left: 0;
+            }
+            
+            .nav-links li {
+                margin: 1.8rem 0;
+            }
+            
+            .hero-content h1 {
+                font-size: 2.8rem;
+            }
+            
+            section {
+                padding: 4rem 1.5rem;
+            }
+            
+            .gallery-images {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Back to top button -->
+    <div class="back-to-top">
+        <i class="fas fa-arrow-up"></i>
+    </div>
+    
+    <!-- Message de succès -->
+    <div class="success-message" id="successMessage">
+        <i class="fas fa-check-circle"></i>
+        <h3>Message envoyé !</h3>
+        <p>Merci pour votre message, je vous répondrai dès que possible.</p>
+        <button class="btn" id="closeSuccess">Fermer</button>
+    </div>
+    
+    <!-- Header -->
+    <header>
+        <nav class="navbar">
+            <a href="#" class="logo">Bochra.T</a>
+            <ul class="nav-links">
+                <li><a href="#home">Accueil</a></li>
+                <li><a href="#projects">Projets</a></li>
+                <li><a href="#skills">Expertise</a></li>
+                <li><a href="#about">À propos</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+            <div class="hamburger">
+                <i class="fas fa-bars"></i>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="home">
+        <div class="container hero">
+            <div class="hero-content">
+                <h1>Bochra Tayaichi</h1>
+                <p>👋 Spécialiste en Business Intelligence & Développement Web passionnée par la transformation des données en solutions visuelles et interactives. Je crée des expériences digitales qui allient analyse et design.</p>
+                <div class="hero-buttons">
+                    <a href="#projects" class="btn">Voir mes projets</a>
+                    <a href="#contact" class="btn btn-outline">Contactez-moi</a>
+                </div>
+            </div>
+            <div class="hero-image">
+                <img src="images/download.jpg" alt="Bochra Tayaichi" class="profile">
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects">
+        <div class="container">
+            <div class="section-title">
+                <h2>Projets Récents</h2>
+            </div>
+            
+            <div class="projects-container">
+                <!-- Projet 1 -->
+                <div class="project-card" data-project="voyage">
+                    <div class="project-image">
+                        <img src="https://images.unsplash.com/photo-1503220317375-aaad61436b1b?q=80&w=2070" alt="Site d'agence de voyage">
+                        <div class="project-overlay">
+                            <i class="fas fa-eye"></i>
+                        </div>
+                    </div>
+                    <div class="project-content">
+                        <span class="project-category web">Développement Web</span>
+                        <h3>Site Web d'Agence de Voyage</h3>
+                        <p>Plateforme complète pour une agence de voyage avec réservation en ligne, galeries de destinations et système de gestion des clients.</p>
+                    </div>
+                </div>
+                
+                <!-- Projet 2 -->
+                <div class="project-card" data-project="predictif">
+                    <div class="project-image">
+                        <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?q=80&w=2070" alt="Analyse prédictive">
+                        <div class="project-overlay">
+                            <i class="fas fa-eye"></i>
+                        </div>
+                    </div>
+                    <div class="project-content">
+                        <span class="project-category bi">Business Intelligence</span>
+                        <h3>Segmentation Client & Analyse Prédictive</h3>
+                        <p>Application web d'analyse prédictive avec segmentation client avancée et visualisation interactive des données comportementales.</p>
+                    </div>
+                </div>
+                
+                <!-- Projet 3 -->
+                <div class="project-card" data-project="dashboard">
+                    <div class="project-image">
+                        <img src="https://images.unsplash.com/photo-1563986768609-322da13575f3?q=80&w=2070" alt="Tableaux de bord interactifs">
+                        <div class="project-overlay">
+                            <i class="fas fa-eye"></i>
+                        </div>
+                    </div>
+                    <div class="project-content">
+                        <span class="project-category bi">Business Intelligence</span>
+                        <h3>Tableaux de Bord Interactifs</h3>
+                        <p>Solutions BI complètes avec processus ETL, rapports stratégiques et modèles prédictifs pour la prise de décision en entreprise.</p>
+                    </div>
+                </div>
+                
+                <!-- Projet 4 -->
+                <div class="project-card" data-project="drone">
+                    <div class="project-image">
+                        <img src="https://images.unsplash.com/photo-1507582020474-9a35b7d455d9?q=80&w=2070" alt="Site e-commerce de drones">
+                        <div class="project-overlay">
+                            <i class="fas fa-eye"></i>
+                        </div>
+                    </div>
+                    <div class="project-content">
+                        <span class="project-category web">Développement Web</span>
+                        <h3>Site e-Commerce de Drones</h3>
+                        <p>Plateforme e-commerce complète avec catalogue produits, panier d'achat, et système d'administration pour une boutique spécialisée.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Project Gallery Modals -->
+    <div class="gallery-modal" id="voyage-gallery">
+        <div class="gallery-container">
+            <div class="gallery-header">
+                <h3 class="gallery-title">Site Web d'Agence de Voyage</h3>
+                <button class="close-gallery">&times;</button>
+            </div>
+            <div class="gallery-content">
+                <div class="gallery-images">
+                    <div class="gallery-image">
+                        <img src="images/agen(3).jpg" alt="Page d'accueil">
+                    </div>
+                    <div class="gallery-image">
+                        <img src="images/agen(4).jpg" alt="Page de destinations">
+                    </div>
+                    <div class="gallery-image">
+                        <img src="images/agen(5).jpg" alt="Page de réservation">
+                    </div>
+                
+                </div>
+                
+                <div class="gallery-description">
+                    <h4>À propos de ce projet</h4>
+                    <p>Voici un site web pour une agence de voyages qui offre aux clients la possibilité de se connecter ou de créer un compte, de consulter les offres et promotions, et de faire des réservations.</p>
+                    <p>Technologies utilisées : PHP, HTML, CSS, MySQL, JavaScript</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <div class="gallery-modal" id="predictif-gallery">
+        <div class="gallery-container">
+            <div class="gallery-header">
+                <h3 class="gallery-title">Segmentation Client & Analyse Prédictive app web</h3>
+                <button class="close-gallery">&times;</button>
+            </div>
+            <div class="gallery-content">
+                <div class="gallery-images">
+                    <div class="gallery-image">
+                        <img src="images/appweb (1).png" alt="Dashboard principal">
+                    </div>
+                    <div class="gallery-image">
+                        <img src="images/appweb (2).png" alt="Segmentation client">
+                    </div>
+                    <div class="gallery-image">
+                        <img src="images/appweb (3).png" alt="Analyse prédictive">
+                    </div>
+                    <div class="gallery-image">
+                        <img src="images/appweb (4).png" alt="Rapports détaillés">
+                    </div>
+                    <div class="gallery-image">
+                        <img src="images/appweb (5).png" alt="Rapports détaillés">
+                    </div>
+                    <div class="gallery-image">
+                        <img src="images/appweb (6).png" alt="Rapports détaillés">
+                    </div>
+                    <div class="gallery-image">
+                        <img src="images/appweb (7).png" alt="Rapports détaillés">
+                    </div>
+                    <div class="gallery-image">
+                        <img src="images/appweb (8).png" alt="Rapports détaillés">
+                    </div>
+                    <div class="gallery-image">
+                        <img src="images/appweb (9).png" alt="Rapports détaillés">
+                    </div>
+                    <div class="gallery-image">
+                        <img src="images/appweb (10).png" alt="Rapports détaillés">
+                    </div>
+                    <div class="gallery-image">
+                        <img src="images/appweb (11).png" alt="Rapports détaillés">
+                    </div>
+                    <div class="gallery-image">
+                        <img src="images/appweb (12).png" alt="Rapports détaillés">
+                    </div>
+                </div>
+                
+                <div class="gallery-description">
+                    <h4>À propos de ce projet</h4>
+                    <p>Développé un outil de support à la décision basé sur le web, combinant Business Intelligence et Intelligence Artificielle, afin d'améliorer la fidélisation des clients dans le secteur des pièces automobiles. La solution comprend des pipelines ETL, des tableaux de bord interactifs et des modèles prédictifs (ventes, sentiments, engagement). Une application Flask sécurisée donne accès à des rapports Power BI et à des prévisions pour orienter la prise de décision stratégique.</p>
+                    <p>Technologies utilisées : Python, Scikit-learn, D3.js, Flask, PostgreSQL</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <div class="gallery-modal" id="dashboard-gallery">
+        <div class="gallery-container">
+            <div class="gallery-header">
+                <h3 class="gallery-title">Tableaux de Bord Interactifs</h3>
+                <button class="close-gallery">&times;</button>
+            </div>
+            <div class="gallery-content">
+                <div class="gallery-images">
+                    <div class="gallery-image">
+                        <img src="images/dashb (1).png" alt="Dashboard principal">
+                    </div>
+                    <div class="gallery-image">
+                        <img src="images/dashb (2).png" alt="Vue analytique">
+                    </div>
+                    <div class="gallery-image">
+                        <img src="images/dashb (3).png" alt="Rapports détaillés">
+                    </div>
+                    <div class="gallery-image">
+                        <img src="images/dashb (4).png" alt="Visualisation des données">
+                    </div>
+                </div>
+                
+                <div class="gallery-description">
+                    <h4>À propos de ce projet</h4>
+                    <p>Conçu et mis en œuvre une pipeline ETL utilisant Talend pour extraire, nettoyer et charger des données internes et externes dans un entrepôt de données structuré. Développé des tableaux de bord interactifs dans Power BI pour visualiser des indicateurs clés de performance tels que la fidélité des clients, les tendances de revenu, l’engagement sur Facebook et l’analyse des sentiments, permettant une prise de décision éclairée pour la stratégie commerciale.</p>
+                    <p>Technologies utilisées : Power BI, SQL Server, Python, Talend</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <div class="gallery-modal" id="drone-gallery">
+        <div class="gallery-container">
+            <div class="gallery-header">
+                <h3 class="gallery-title">Site e-Commerce de Drones</h3>
+                <button class="close-gallery">&times;</button>
+            </div>
+            <div class="gallery-content">
+                <div class="gallery-images">
+                    <div class="gallery-image">
+                        <img src="images/dr (1).jfif" alt="Page d'accueil">
+                    </div>
+                    <div class="gallery-image">
+                        <img src="images/dr (2).jfif" alt="Catalogue produits">
+                    </div>
+                    <div class="gallery-image">
+                        <img src="images/dr (3).jfif" alt="Page produit détaillée">
+                    </div>
+                    <div class="gallery-image">
+                        <img src="images/dr (4).jfif" alt="Processus de paiement">
+                    </div>
+                    <div class="gallery-image">
+                        <img src="images/dr (5).jfif" alt="Processus de paiement">
+                    </div>
+                    <div class="gallery-image">
+                        <img src="images/dr (6).jfif" alt="Processus de paiement">
+                    </div>
+                    <div class="gallery-image">
+                        <img src="images/dr (7).jfif" alt="Processus de paiement">
+                    </div>
+                    <div class="gallery-image">
+                        <img src="images/dr (8).jfif" alt="Processus de paiement">
+                    </div>
+                    <div class="gallery-image">
+                        <img src="images/dr (9).jfif" alt="Processus de paiement">
+                    </div>
+                    <div class="gallery-image">
+                        <img src="images/dr (10).jfif" alt="Processus de paiement">
+                    </div>
+                    <div class="gallery-image">
+                        <img src="images/dr (11).jfif" alt="Processus de paiement">
+                    </div>
+                    <div class="gallery-image">
+                        <img src="images/dr (12).jfif" alt="Processus de paiement">
+                    </div>
+                    <div class="gallery-image">
+                        <img src="images/dr (13).jfif" alt="Processus de paiement">
+                    </div>
+                    <div class="gallery-image">
+                        <img src="images/dr (14).jfif" alt="Processus de paiement">
+                    </div>
+                    <div class="gallery-image">
+                        <img src="images/dr (15).jfif" alt="Processus de paiement">
+                    </div>
+                    <div class="gallery-image">
+                        <img src="images/dr (16).jfif" alt="Processus de paiement">
+                    </div>
+                    <div class="gallery-image">
+                        <img src="images/dr (17).jfif" alt="Processus de paiement">
+                    </div>
+                    <div class="gallery-image">
+                        <img src="images/dr (18).jfif" alt="Processus de paiement">
+                    </div>
+                    <div class="gallery-image">
+                        <img src="images/dr (19).jfif" alt="Processus de paiement">
+                    </div>
+                    <div class="gallery-image">
+                        <img src="images/dr (20).jfif" alt="Processus de paiement">
+                    </div>
+                    <div class="gallery-image">
+                        <img src="images/dr (21).jfif" alt="Processus de paiement">
+                    </div>
+                </div>
+
+                
+                <div class="gallery-description">
+                    <h4>À propos de ce projet</h4>
+                    <p>Plateforme e-commerce spécialisée dans la vente de drones professionnels et grand public, avec un système de gestion de catalogue, un panier d'achat sécurisé et une interface d'administration complète.</p>
+                    <p>Technologies utilisées : Vue.js, Laravel, MySQL, Stripe API</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Skills Section -->
+    <section id="skills">
+        <div class="container">
+            <div class="section-title">
+                <h2>Domaines d'Expertise</h2>
+            </div>
+            
+            <div class="skills-container">
+                <div class="skill-category">
+                    <h3>Développement Web</h3>
+                    <ul class="skill-list">
+                        <li>Applications Web Complètes</li>
+                        <li>Frontend & Backend</li>
+                        <li>Sites e-Commerce</li>
+                        <li>Plateformes Interactives</li>
+                        <li>Intégration Responsive</li>
+                    </ul>
+                </div>
+                
+                <div class="skill-category">
+                    <h3>Business Intelligence</h3>
+                    <ul class="skill-list">
+                        <li>Processus ETL</li>
+                        <li>Analyse Prédictive</li>
+                        <li>Tableaux de Bord</li>
+                        <li>Segmentation Client</li>
+                        <li>Visualisation de Données</li>
+                    </ul>
+                </div>
+                
+                <div class="skill-category">
+                    <h3>Design Graphique</h3>
+                    <ul class="skill-list">
+                        <li>Identité Visuelle</li>
+                        <li>Affiches & Supports Promotionnels</li>
+                        <li>CV Professionnels</li>
+                        <li>Menus & Brochures</li>
+                        <li>Design d'Interface</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about">
+        <div class="container">
+            <div class="section-title">
+                <h2>À propos de moi</h2>
+            </div>
+            
+            <div class="about-content">
+                <p>Je suis une professionnelle polyvalente à l'intersection des données, de la technologie et du design. Mon parcours combine une expertise technique solide en développement web et en Business Intelligence avec une sensibilité créative pour le design graphique.</p>
+                
+                <p>Dans le domaine du <span class="highlight">développement web</span>, je crée des applications complètes, des sites e-commerce performants et des plateformes interactives qui offrent des expériences utilisateur fluides et engageantes.</p>
+                
+                <p>En <span class="highlight">Business Intelligence</span>, je transforme des données complexes en informations actionnables à travers des tableaux de bord intuitifs, des analyses prédictives et des processus ETL optimisés qui éclairent la prise de décision stratégique.</p>
+                
+                <p>Mon approche du <span class="highlight">design graphique</span> met l'accent sur la clarté, l'impact visuel et la cohérence de la communication, que ce soit pour des affiches promotionnelles, des CV percutants ou des identités visuelle fortes.</p>
+                
+                <p>Je suis constamment à la recherche de nouveaux défis où je peux mettre à profit cette combinaison unique de compétences pour créer des solutions innovantes à fort impact.</p>
+                
+                <a href="#contact" class="btn" style="margin-top: 2rem;">Travaillons ensemble</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact">
+        <div class="container">
+            <div class="section-title">
+                <h2 style="color: white;">Contactez-moi</h2>
+            </div>
+            
+            <div class="contact-container">
+                <div class="contact-info">
+                    <h3>Coordonnées</h3>
+                    <div class="contact-methods">
+                        <div class="contact-item">
+                            <div class="contact-icon">
+                                <i class="fas fa-envelope"></i>
+                            </div>
+                            <h4>Email</h4>
+                            <p>contact@bochratayaichi.com</p>
+                        </div>
+                        
+                        <div class="contact-item">
+                            <div class="contact-icon">
+                                <i class="fab fa-linkedin-in"></i>
+                            </div>
+                            <h4>LinkedIn</h4>
+                            <p><a href="https://www.linkedin.com/in/bochra-tayaichi-12236334a/" target="_blank">/in/bochratayaichi</a></p>
+                        </div>
+                        
+                        <div class="contact-item">
+                            <div class="contact-icon">
+                                <i class="fab fa-github"></i>
+                            </div>
+                            <h4>GitHub</h4>
+                            <p><a href="https://github.com/boch73" target="_blank">@bochratayaichi</a></p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="contact-form">
+                    <h3>Envoyez un message</h3>
+                    <form id="contactForm" action="https://formspree.io/f/mdkdadlr" method="POST">
+                        <div class="form-group">
+                            <label for="name">Votre nom</label>
+                            <input type="text" id="name" name="name" class="form-control" required placeholder="Nom complet">
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="email">Votre email</label>
+                            <input type="email" id="email" name="email" class="form-control" required placeholder="Adresse email">
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="subject">Sujet</label>
+                            <input type="text" id="subject" name="subject" class="form-control" required placeholder="Sujet du message">
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="message">Message</label>
+                            <textarea id="message" name="message" class="form-control" required placeholder="Votre message..."></textarea>
+                        </div>
+                        
+                        <button type="submit" class="btn">Envoyer</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="social-links">
+                <a href="https://www.linkedin.com/in/bochra-tayaichi-12236334a/" target="_blank"><i class="fab fa-linkedin-in"></i></a>
+                <a href="https://github.com/boch73" target="_blank"><i class="fab fa-github"></i></a>
+                
+            </div>
+            <p>&copy; 2025 Bochra Tayaichi. Tous droits réservés.</p>
+        </div>
+    </footer>
+
+    <script>
+        // Mobile menu toggle
+        const hamburger = document.querySelector('.hamburger');
+        const navLinks = document.querySelector('.nav-links');
+        
+        hamburger.addEventListener('click', () => {
+            navLinks.classList.toggle('active');
+            hamburger.innerHTML = navLinks.classList.contains('active') ? 
+                '<i class="fas fa-times"></i>' : '<i class="fas fa-bars"></i>';
+        });
+        
+        // Close mobile menu when clicking a link
+        document.querySelectorAll('.nav-links a').forEach(link => {
+            link.addEventListener('click', () => {
+                navLinks.classList.remove('active');
+                hamburger.innerHTML = '<i class="fas fa-bars"></i>';
+            });
+        });
+        
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    window.scrollTo({
+                        top: target.offsetTop - 80,
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+        
+        // Header scroll effect
+        window.addEventListener('scroll', () => {
+            const header = document.querySelector('header');
+            if (window.scrollY > 100) {
+                header.style.boxShadow = '0 10px 20px rgba(0, 0, 0, 0.1)';
+                header.style.background = 'rgba(255, 255, 255, 0.98)';
+            } else {
+                header.style.boxShadow = 'none';
+                header.style.background = 'rgba(255, 255, 255, 0.95)';
+            }
+        });
+        
+        // Animation on scroll
+        const animateOnScroll = () => {
+            const elements = document.querySelectorAll('.project-card, .skill-category');
+            
+            elements.forEach(element => {
+                const elementPosition = element.getBoundingClientRect().top;
+                const screenPosition = window.innerHeight / 1.3;
+                
+                if (elementPosition < screenPosition) {
+                    element.style.opacity = 1;
+                    element.style.transform = 'translateY(0)';
+                }
+            });
+        };
+        
+        window.addEventListener('scroll', animateOnScroll);
+        window.addEventListener('load', animateOnScroll);
+        
+        // Back to top button
+        const backToTopButton = document.querySelector('.back-to-top');
+        
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 500) {
+                backToTopButton.classList.add('visible');
+            } else {
+                backToTopButton.classList.remove('visible');
+            }
+        });
+        
+        backToTopButton.addEventListener('click', () => {
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        });
+        
+        // Form submission handling - CORRECTION APPLIQUÉE
+        const contactForm = document.getElementById('contactForm');
+        const successMessage = document.getElementById('successMessage');
+        const closeSuccess = document.getElementById('closeSuccess');
+        
+        contactForm.addEventListener('submit', async (e) => {
+            e.preventDefault();
+            
+            const formData = new FormData(contactForm);
+            
+            try {
+                const response = await fetch(contactForm.action, {
+                    method: 'POST',
+                    body: formData,
+                    headers: {
+                        'Accept': 'application/json'
+                    }
+                });
+                
+                if (response.ok) {
+                    // Show success message
+                    successMessage.style.display = 'block';
+                    // Reset form
+                    contactForm.reset();
+                } else {
+                    alert("Une erreur s'est produite. Veuillez réessayer.");
+                }
+            } catch (error) {
+                alert("Erreur réseau. Veuillez réessayer.");
+            }
+        });
+        
+        // Close success message
+        closeSuccess.addEventListener('click', () => {
+            successMessage.style.display = 'none';
+        });
+        
+        // Project gallery functionality
+        const projectCards = document.querySelectorAll('.project-card');
+        const galleryModals = document.querySelectorAll('.gallery-modal');
+        const closeButtons = document.querySelectorAll('.close-gallery');
+        
+        // Open gallery modal when clicking on project card
+        projectCards.forEach(card => {
+            card.addEventListener('click', () => {
+                const projectId = card.getAttribute('data-project');
+                const modal = document.getElementById(`${projectId}-gallery`);
+                
+                if (modal) {
+                    modal.classList.add('active');
+                    document.body.style.overflow = 'hidden';
+                }
+            });
+        });
+        
+        // Close gallery modal
+        closeButtons.forEach(button => {
+            button.addEventListener('click', () => {
+                galleryModals.forEach(modal => {
+                    modal.classList.remove('active');
+                    document.body.style.overflow = 'auto';
+                });
+            });
+        });
+        
+        // Close modal when clicking outside the content
+        galleryModals.forEach(modal => {
+            modal.addEventListener('click', (e) => {
+                if (e.target === modal) {
+                    modal.classList.remove('active');
+                    document.body.style.overflow = 'auto';
+                }
+            });
+        });
+        
+        // Close modal with Escape key
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape') {
+                galleryModals.forEach(modal => {
+                    if (modal.classList.contains('active')) {
+                        modal.classList.remove('active');
+                        document.body.style.overflow = 'auto';
+                    }
+                });
+            }
+        });
+    </script>
+</body>
+</html>
